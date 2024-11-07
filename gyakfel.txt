@@ -1,0 +1,124 @@
+	//ZH GYAK ILLES ZOLTAN LEVENTE
+
+	/* 1. feladat
+	Mat img = imread("../../../anyagok/illes zoltan levente/zold_alma.jpg", IMREAD_COLOR);
+	Mat hsv, mask, bg = Mat::zeros(img.size(), img.type());
+
+	resize(img, img, img.size()/5);
+	imshow("kicsi", img);
+	
+	cvtColor(img, hsv, COLOR_BGR2HSV);
+	inRange(hsv, Scalar(22, 0, 0), Scalar(50, 255, 255), mask);
+	imshow("mask", mask);
+
+	img.copyTo(bg, mask);
+	imshow("result", bg);
+
+	waitKey();
+	*/
+	/*	
+	Mat img = imread("../../../anyagok/illes zoltan levente/piros_alma_sziv.jpg", IMREAD_COLOR);
+	Mat img_gray, mask, bg = Mat::zeros(img.size(), img.type());
+	
+	imshow("eredeti", img); 
+
+	cvtColor(img, img_gray, COLOR_BGR2GRAY);
+	imshow("szurkeskala", img_gray);
+
+	threshold(img_gray, mask, 210, 255, THRESH_BINARY_INV);
+	imshow("mask", mask);
+	
+	img.copyTo(bg, mask);
+	imshow("result", bg);
+
+	waitKey();
+	*/
+	/*
+	Mat fg = imread("../../../anyagok/illes zoltan levente/dekoracio.jpg", IMREAD_COLOR);
+	Mat bg = imread("../../../anyagok/illes zoltan levente/hatter_halloween.jpeg", IMREAD_COLOR);
+	imshow("eredeti", fg);
+	imshow("hatter", bg);
+	Rect r(bg.cols - fg.cols - 30, bg.rows / 10, fg.cols, fg.rows);
+	fg.copyTo(bg(r));
+	Rect r2(bg.cols - fg.cols - 30, bg.rows / 2, fg.cols, fg.rows);
+	fg.copyTo(bg(r2));
+	imshow("result", bg);
+	waitKey();
+	*/
+	/*
+	Mat img = imread("../../../anyagok/illes zoltan levente/m&m.jpg", IMREAD_COLOR);
+	Mat hsv, mask, bg = Mat::zeros(img.size(), img.type());
+	
+	imshow("eredeti", img); 
+	
+	cvtColor(img, hsv, COLOR_BGR2HSV);
+	inRange(hsv, Scalar(31, 0, 0), Scalar(150, 255, 255), mask);
+	imshow("mask", mask);
+
+	img.copyTo(bg, 255-mask);
+	imshow("result", bg);
+
+	waitKey();
+	*/
+	/*
+	Mat img = imread("../../../anyagok/illes zoltan levente/m&m.jpg", IMREAD_COLOR);
+	Mat hsv, mask, bg = Mat::zeros(img.size(), img.type());
+
+	imshow("eredeti", img);
+
+	cvtColor(img, hsv, COLOR_BGR2HSV);
+	inRange(hsv, Scalar(85, 0, 0), Scalar(130, 255, 255), mask);
+
+	medianBlur(mask, mask, 7);
+	imshow("mask", mask);
+
+	img.copyTo(bg, mask);
+	imshow("result", bg);
+
+	waitKey();
+	*/
+	/*
+	Mat img = imread("../../../anyagok/illes zoltan levente/m&m.jpg", IMREAD_COLOR);
+	Mat hsv, mask, bg = Mat::zeros(img.size(), img.type());
+
+	imshow("eredeti", img);
+
+	cvtColor(img, hsv, COLOR_BGR2HSV);
+	inRange(hsv, Scalar(85, 0, 0), Scalar(130, 255, 255), mask);
+
+	medianBlur(mask, mask, 7);
+	imshow("mask", mask);
+
+	img.copyTo(bg, mask);
+
+	cvtColor(bg, hsv, COLOR_BGR2HSV);
+
+	Mat_<Vec3b> hs = hsv;
+	for (auto& p : hs) {
+		p[0] = 55;
+	}
+
+	cvtColor(hsv, bg, COLOR_HSV2BGR);
+	imshow("result", bg);
+
+	waitKey();
+	*/
+	/*
+	Mat img = imread("../../../anyagok/illes zoltan levente/dekoracio.jpg", IMREAD_COLOR);
+
+	Rect r(0, img.rows/2+50, img.cols, img.rows/2-50);
+	Mat smallimg = img(r).clone();
+
+	Mat hsv, mask, bg = Mat::zeros(smallimg.size(), smallimg.type());
+
+	imshow("eredeti", smallimg);
+
+	cvtColor(smallimg, hsv, COLOR_BGR2HSV);
+	inRange(hsv, Scalar(0, 0, 0), Scalar(40, 255, 255), mask);
+	imshow("mask", mask);
+
+	smallimg.copyTo(bg, mask);
+	imshow("result", bg);
+
+	waitKey();
+	*/
